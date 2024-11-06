@@ -1,10 +1,10 @@
 import java.io.*;
 import java.net.*;
 
-public class ServidorComThread {
+public class ServerTH {
     public static void main(String[] args) throws IOException {
-        ServerSocket servidor = new ServerSocket(12344);
-        System.out.println("Servidor iniciado na porta 12344. Aguardando conexões...");
+        ServerSocket servidor = new ServerSocket(12346);
+        System.out.println("Servidor iniciado na porta 12346. Aguardando conexões...");
 
         while (true) {
             // Aceita uma conexão de cliente

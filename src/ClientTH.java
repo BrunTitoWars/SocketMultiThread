@@ -1,9 +1,9 @@
 import java.io.*;
 import java.net.*;
 
-public class Cliente {
+public class ClientTH {
     public static void main(String[] args) throws IOException {
-        Socket cliente = new Socket("localhost", 12345);
+        Socket cliente = new Socket("localhost", 12346);
 
         // Envia uma mensagem para o servidor
         PrintWriter saida = new PrintWriter(cliente.getOutputStream(), true);

@@ -1,12 +1,9 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.Socket;
+import java.io.*;
+import java.net.*;
 
-public class ClienteComThread {
+public class Client {
     public static void main(String[] args) throws IOException {
-        Socket cliente = new Socket("localhost", 12344);
+        Socket cliente = new Socket("localhost", 12345);
 
         // Envia uma mensagem para o servidor
         PrintWriter saida = new PrintWriter(cliente.getOutputStream(), true);
