@@ -3,9 +3,9 @@ import java.net.*;
 import java.util.concurrent.*;
 
 public class Benchmark {
-    private static final int NUM_CLIENTES = 100; // Número de clientes simultâneos
+    private static final int NUM_CLIENTES = 200000; // Número de clientes simultâneos
     private static final String HOST = "localhost";
-    private static final int PORTA = 12345;
+    private static final int PORTA = 12346;
 
     public static void main(String[] args) {
         // Executor para gerenciar múltiplos clientes
