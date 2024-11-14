@@ -3,47 +3,41 @@ import java.net.*;
 import java.util.concurrent.*;
 
 public class Benchmark {
-    private static final int NUM_CLIENTES = 200000; // Número de clientes simultâneos
-    private static final String HOST = "localhost";
-    private static final int PORTA = 12346;
+    private static final int CLIENT_COUNT = 10;
 
     public static void main(String[] args) {
-        // Executor para gerenciar múltiplos clientes
-        ExecutorService executor = Executors.newFixedThreadPool(NUM_CLIENTES);
-        long tempoInicio = System.currentTimeMillis();
+        System.out.println("Iniciando benchmark...");
 
-        // Envia as requisições simultâneas
-        for (int i = 0; i < NUM_CLIENTES; i++) {
-            executor.submit(() -> {
-                try {
-                    Socket cliente = new Socket(HOST, PORTA);
+        long singleThreadTime = benchmarkServer("localhost", 5000);
+        long multiThreadTime = benchmarkServer("localhost", 6000);
 
-                    // Envia uma mensagem ao servidor
-                    PrintWriter saida = new PrintWriter(cliente.getOutputStream(), true);
-                    saida.println("Mensagem do cliente");
+        System.out.println("Tempo do servidor sem threads: " + singleThreadTime + " ms");
+        System.out.println("Tempo do servidor com threads: " + multiThreadTime + " ms");
+    }
 
-                    // Lê a resposta do servidor
-                    BufferedReader entrada = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
-                    entrada.readLine(); // Recebe a resposta (não armazenada para simplificação)
+    private static long benchmarkServer(String host, int port) {
+        ExecutorService executor = Executors.newFixedThreadPool(CLIENT_COUNT);
+        long startTime = System.currentTimeMillis();
 
-                    cliente.close();
+        for (int i = 0; i < CLIENT_COUNT; i++) {
+            executor.execute(() -> {
+                try (Socket socket = new Socket(host, port);
+                     BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
+                    in.readLine(); // Lendo a resposta do servidor
                 } catch (IOException e) {
-                    System.out.println("Erro na conexão do cliente: " + e.getMessage());
+                    e.printStackTrace();
                 }
             });
         }
 
-        // Aguarda todos os clientes terminarem e calcula o tempo final
         executor.shutdown();
         try {
-            executor.awaitTermination(1, TimeUnit.MINUTES); // Aguarda no máximo 1 minuto
+            executor.awaitTermination(10, TimeUnit.SECONDS);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        long tempoFim = System.currentTimeMillis();
-        long tempoTotal = tempoFim - tempoInicio;
-        System.out.println("Tempo total para " + NUM_CLIENTES + " clientes: " + tempoTotal + " ms");
-        System.out.println("Tempo médio por cliente: " + (tempoTotal / (double) NUM_CLIENTES) + " ms");
+        long endTime = System.currentTimeMillis();
+        return endTime - startTime;
     }
 }
