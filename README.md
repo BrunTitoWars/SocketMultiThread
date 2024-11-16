@@ -171,3 +171,15 @@ Este programa implementa um servidor single-threaded que atende conexões de cli
 ### MultiThreadServer:
 - Atende múltiplos clientes simultaneamente.
 - Escalável, mas consome mais recursos do sistema.
+
+## Benchmark Comparação
+ (50k conexões)
+```BASH
+Resposta do servidor (sem threads): Processamento concluído
+Tempo total sem threads: 10057 ms
+Tempo médio por cliente sem threads: 1005.7 ms
+Resposta do servidor (com threads): Processamento concluído
+Tempo total com threads: 1006 ms
+Tempo médio por cliente com threads: 100.6 ms
+```
+
