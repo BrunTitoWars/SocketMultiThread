@@ -183,3 +183,5 @@ Tempo total com threads: 1006 ms
 Tempo médio por cliente com threads: 100.6 ms
 ```
 
+# Socket
+![image](https://github.com/user-attachments/assets/cce2eb95-73d8-408a-8c66-e0f7a54fd4da)
