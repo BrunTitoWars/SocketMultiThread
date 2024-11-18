@@ -20,7 +20,7 @@ public class MultiThreadServer {
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
             out.println("Resposta do servidor com threads");
-            in.readLine(); // Simulando uma operação de leitura
+            in.readLine();
             clientSocket.close();
         } catch (IOException e) {
             e.printStackTrace();
