@@ -1,5 +1,4 @@
-# Table of Contents
-
+# Conteúdo
 1. [Classe Benchmark em Java](#classe-benchmark-em-java)  
    - [Objetivo](#objetivo)  
    - [Funcionamento](#funcionamento)  
@@ -22,6 +21,7 @@
    - [Exemplo de Uso](#exemplo-de-uso-1)  
 
 4. [Comparação com MultiThreadServer](#comparação-com-multithreadserver)
+5. [Documentação: Como Criar e entrar em uma rede Hamachi](#documentação-como-criar-e-entrar-em-uma-rede-hamachi)
 
 
 # Classe `Benchmark` em Java
@@ -185,3 +185,68 @@ Tempo médio por cliente com threads: 100.6 ms
 
 # Socket
 ![image](https://github.com/user-attachments/assets/cce2eb95-73d8-408a-8c66-e0f7a54fd4da)
+
+# [Documentação: Como Criar e Entrar em uma Rede Hamachi](#documentação-como-criar-e-entrar-em-uma-rede-hamachi)
+
+O Hamachi é um software de rede privada virtual (VPN) que permite criar uma rede local (LAN) sobre a Internet. Ele é útil para jogos online ou outras situações onde você precisa se conectar a um ambiente virtual seguro. Abaixo estão os passos para criar uma rede no Hamachi e permitir que outra pessoa entre.
+
+## Passo 1: Instalar o Hamachi
+
+1. Acesse o site oficial do Hamachi [aqui](https://www.vpn.net/).
+2. Baixe a versão do Hamachi para o seu sistema operacional (Windows, macOS ou Linux).
+3. Após o download, execute o instalador e siga as instruções para concluir a instalação.
+
+## Passo 2: Criar uma Rede no Hamachi
+
+1. **Abrir o Hamachi:**  
+   Após a instalação, abra o Hamachi.
+   
+2. **Criar uma Rede:**
+   - Clique no botão **"Rede"** no canto superior esquerdo da interface do Hamachi.
+   - Selecione **"Criar uma nova rede..."**.
+
+3. **Configurar a Rede:**
+   - **Nome da Rede:** Escolha um nome único para a sua rede (exemplo: "MinhaRedeHamachi").
+   - **Senha da Rede:** Defina uma senha para que apenas pessoas autorizadas possam entrar na rede.
+   - Clique em **"Criar"** para finalizar a criação da rede.
+
+Agora sua rede está criada, e você verá o nome da rede na lista de redes no Hamachi.
+
+## Passo 3: Convidar Outra Pessoa para Entrar na Rede
+
+1. **Compartilhar Detalhes com a Outra Pessoa:**
+   - Compartilhe o nome da rede e a senha com a pessoa que deseja convidar para a rede.
+   
+2. **A outra pessoa deve instalar o Hamachi:**
+   - Ela precisa seguir os mesmos passos de instalação descritos acima.
+
+3. **Entrar na Rede:**
+   - Após a instalação, a outra pessoa deve abrir o Hamachi, clicar em **"Rede"** e escolher **"Entrar em uma rede existente..."**.
+   - Ela deve inserir o nome da rede e a senha que você forneceu.
+   - Clique em **"Entrar"** para finalizar o processo.
+
+## Passo 4: Verificar a Conexão
+
+1. **Verifique se a Conexão foi Bem-Sucedida:**
+   - No Hamachi, os dispositivos conectados à sua rede aparecerão na lista de membros da rede.
+   - Cada pessoa que entra na rede terá um endereço IP virtual do Hamachi atribuído, que pode ser usado para se conectar a jogos, servidores ou outros serviços na rede local.
+
+## Passo 5: Conectar e Usar a Rede Hamachi
+
+- Após a outra pessoa ter entrado na rede, vocês podem começar a utilizar a rede como se estivessem em uma rede local física.
+- Por exemplo, se for para jogar, basta usar o IP do Hamachi de cada pessoa para se conectar ao jogo.
+
+## Passo 6: Desconectar da Rede
+
+1. Se desejar sair da rede Hamachi, clique com o botão direito sobre o nome da rede e selecione **"Sair da rede"**.
+2. A rede permanecerá ativa, mas você não estará mais conectado a ela.
+
+## Considerações Finais
+
+- **Segurança:** A senha da rede deve ser compartilhada apenas com pessoas confiáveis para garantir que ninguém não autorizado tenha acesso à sua rede.
+- **Desempenho:** O desempenho da conexão pode variar dependendo da qualidade da sua conexão com a Internet.
+- **Limitações:** O Hamachi permite criar redes com até 5 dispositivos na versão gratuita. Se precisar de mais dispositivos, você pode considerar a versão paga do Hamachi.
+
+Essa documentação cobre o processo básico de criação de redes e entrada em redes Hamachi. Caso haja alguma dúvida ou problemas com a conexão, verifique as configurações de rede ou consulte o suporte oficial do Hamachi.
+
+
